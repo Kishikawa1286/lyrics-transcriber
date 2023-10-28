@@ -25,7 +25,12 @@ export const functions = ({
   firestore: typeof firestore;
   storage: typeof storage;
 } => {
-  setGlobalOptions({ memory, region: "asia-northeast1", secrets });
+  setGlobalOptions({
+    memory,
+    region: "asia-northeast1",
+    secrets,
+    maxInstances: 10,
+  });
   return {
     database,
     https,
